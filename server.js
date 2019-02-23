@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const db = require('./config/keys').mongoURI;
 
 const locationRoutes = require("./routes/location");
+const profileRoutes = require("./routes/profile");
 
 const app = express();
 
@@ -12,6 +13,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 app.use('/locations', locationRoutes);
+app.use('/locations', profileRoutes);
 
 app.get('/', (req, res) => res.send('It Working'));
 
