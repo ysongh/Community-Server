@@ -1,6 +1,19 @@
 const Location = require("../models/Location");
 const Profile = require("../models/Profile");
 
+exports.getProfiles = (req, res, next) => {
+    const locationId = req.params.locationId;
+    
+    Location.findById(locationId)
+        .populate("profiles")
+        .then(result => {
+            res.status(200).json({
+                msg: "Success on finding all the profiles",
+                locations: result
+            });
+        });
+};
+
 exports.addProfile = (req, res, next) => {
     const locationId = req.params.locationId;
     const name = req.body.name;
