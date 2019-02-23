@@ -1,5 +1,15 @@
 const Location = require("../models/Location");
 
+exports.getLocations = (req, res, next) => {
+    Location.find()
+        .then(result => {
+            res.status(200).json({
+                msg: "Success on finding all location",
+                locations: result
+            });
+        });
+};
+
 exports.addLocation = (req, res, next) => {
     const location = req.body.location;
     
