@@ -1,9 +1,17 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 
 const db = require('./config/keys').mongoURI;
 
+const locationRoutes = require("./routes/location");
+
 const app = express();
+
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
+
+app.use('/locations', locationRoutes);
 
 app.get('/', (req, res) => res.send('It Working'));
 
