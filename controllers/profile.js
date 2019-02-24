@@ -14,6 +14,18 @@ exports.getProfiles = (req, res, next) => {
         });
 };
 
+exports.getProfileById = (req, res, next) => {
+    const profileId = req.params.profileId;
+    
+    Profile.findById(profileId)
+        .then(result => {
+            res.status(200).json({
+                msg: "Success on finding this profile",
+                profile: result
+            });
+        });
+};
+
 exports.addProfile = (req, res, next) => {
     const locationId = req.params.locationId;
     const name = req.body.name;
