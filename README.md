@@ -17,6 +17,11 @@ Get all profiles from that location
 * Request - GET
 * Params - Replace ':locationId' with an id of a location
 
+Get a profile by id
+* Link - https://communityserver.herokuapp.com/locations/:locationId/profiles/:profileId
+* Request - GET
+* Params - Replace ':locationId' with an id of a location and ':profileId' with a id of a profile
+
 Create a profile
 * Link - https://communityserver.herokuapp.com/locations/:locationId/profiles
 * Request - POST
