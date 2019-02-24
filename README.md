@@ -26,4 +26,4 @@ Create a profile
 * Link - https://communityserver.herokuapp.com/locations/:locationId/profiles
 * Request - POST
 * Params - Replace ':locationId' with an id of a location
-* Body - name, age, phone, email, title, scores, numberOfEvents
+* Body - name, age, phone, email, title, scores, numberOfEvents, imageURL

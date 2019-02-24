@@ -35,6 +35,7 @@ exports.addProfile = (req, res, next) => {
     const title = req.body.title;
     const scores = req.body.scores;
     const numberOfEvents = req.body.numberOfEvents;
+    const imageURL = req.body.imageURL;
     let error;
     
     const profileData = new Profile({
@@ -45,7 +46,8 @@ exports.addProfile = (req, res, next) => {
         email: email,
         title: title,
         scores: scores,
-        numberOfEvents: numberOfEvents
+        numberOfEvents: numberOfEvents,
+        imageURL: imageURL
     });
     
     Location.findById(locationId)

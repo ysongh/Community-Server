@@ -24,6 +24,9 @@ const profileSchema = new Schema({
     numberOfEvents: {
         type: Number
     },
+    imageURL: {
+        type: String
+    },
     locationId: {
         type: Schema.Types.ObjectId,
         ref: 'Location'
